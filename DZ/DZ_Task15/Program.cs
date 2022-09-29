@@ -30,14 +30,14 @@ void PrintArray (int[] array)
 int SumElemNegIndex(int[] arr)
 {
     int sum = 0;
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 1; i < arr.Length; i+=2)
     {
-        if(i % 2 == 0) sum += arr[i];
+        sum += arr[i];
     }
     return sum;
 }
 
-int[] arr = CreateArrayRndInt(5, -10, 10);
+int[] arr = CreateArrayRndInt(4, -10, 10);
 PrintArray(arr);
 int res = SumElemNegIndex(arr);
 Console.Write($"-> {res}");
