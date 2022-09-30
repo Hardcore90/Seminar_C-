@@ -30,18 +30,19 @@ void PrintArray (int[] array)
 int[] MultiplyPairOfNumbers(int[] arr1)
 {
     int lengthNewArray = default;
-    if(arr1.Length % 2 == 0) lengthNewArray = lengthNewArray / 2;
-    else lengthNewArray = (lengthNewArray / 2) + 1;
+    if(arr1.Length % 2 == 0) lengthNewArray = arr1.Length / 2;
+    else lengthNewArray = (arr1.Length / 2) + 1;
     int[] newArray = new int[lengthNewArray];
-    for (int i = 0; i < arr1.Length; i++)
+
+    for (int i = 0; i < newArray.Length; i++)
     {
-        newArray[i] = arr1[i] * arr1[arr1.Length-1-i];
+        newArray[i] = arr1[i] * arr1[arr1.Length - 1 - i];
     }
 
-    if(arr1.Length % 2 == 1) newArray[newArray.Length - 1] =arr1[arr1.Length / 2];
+    if(arr1.Length % 2 == 1) newArray[newArray.Length - 1] = arr1[arr1.Length / 2];
     return newArray;
 }
-int[] arr = CreateArrayRndInt(6, 1, 10);
+int[] arr = CreateArrayRndInt(5, 1, 10);
 PrintArray(arr);
 int[] newarr = MultiplyPairOfNumbers(arr);
 PrintArray(newarr);
