@@ -6,7 +6,7 @@
 
 int[,,] CreateMatrix(int m, int n, int b, int min, int max)
 {
-    Random rnd = new Random();
+    int count = 10;
     int[,,] matrix = new int[m, n, b];
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
@@ -14,7 +14,8 @@ int[,,] CreateMatrix(int m, int n, int b, int min, int max)
         {
             for (int k = 0; k < matrix.GetLength(2); k++)
             {
-                matrix[i, j, k] = rnd.Next(min, max);
+                matrix[i, j, k] = count;
+                count++;
             }
         }
     }
